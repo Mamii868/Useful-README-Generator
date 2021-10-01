@@ -17,6 +17,8 @@
   ## Usage
   
   In the terminal type ```node index.js``` to run the program and answer the questions shown
+
+  Video [Link](https://drive.google.com/file/d/13dGVODeci7yw4mFeYfqkX-a9_RsRFzbS/view?usp=sharing)
   
   ## License
 
