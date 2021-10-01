@@ -37,8 +37,8 @@ const questions = [
         name: "test"
     },
     {
-        type: 'checkbox',
-        message: "what licenses are needed",
+        type: 'list',
+        message: "what license is needed",
         name: "license",
         choices: ["MIT", "GPLv3", "Apache 2.0", "BSD 3", "None"]
     },
@@ -57,8 +57,7 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        let licenceInfo = renderLicense(answers)
-        const info = generateMarkdown(answers, licenceInfo)
+        const info = generateMarkdown(answers)
         createFile(info)
 })
     
