@@ -57,7 +57,6 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-      console.log(answers) 
         const info = generateMarkdown(answers)
         createFile(info)
 })
