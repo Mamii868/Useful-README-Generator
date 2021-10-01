@@ -2,6 +2,8 @@
 const inquirer = require("inquirer")
 const fs = require("fs");
 const Choice = require("inquirer/lib/objects/choice");
+const renderLicenseSection = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 const questions = [
     "what is the title?",
@@ -12,10 +14,11 @@ const questions = [
     "enter test instructions"
 ];
 
-inquirer.prompt(
+function init() {
+    inquirer.prompt(
     [
         {
-            tyop: "input",
+            type: "input",
             message: "what is the title?",
             name: "title"
         },
@@ -47,7 +50,7 @@ inquirer.prompt(
         {
             type: 'checkbox',
             message: "what licenses are needed",
-            name: "licenses",
+            name: "license",
             choices: ["MIT", "GPLv3", "Apache 2.0", "BSD 3", "None"]
         },
         {
@@ -65,41 +68,20 @@ inquirer.prompt(
     ]
 )
     .then((answers) => {
-        if (answers.licenses == "MIT") {
-            answers.licenses = 
-        } else
-            fs.writeToFile('Test.md', `# ${answers.title}
-        ## Description
-        ${answers.description}
-        ## Table of Contents
-        
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [Credits](#credits)
-        - [License](#license)
-        - [How to Contribute](#How-to-Contribute)
-        - [Tests](#Tests)
-        ## Installation
-        ${answers.instructions}
-        ## Usage
-        ${answers.howToUse}
-        
-        ## License
-        ${answers.licenses}
-        ## How to Contribute
-        ${answers.contributions}
-        ## Tests
-
-        ## Contact Me
-
-        ` )
+       fs.writeFileSync('./README1.md', 
+       `${generateMarkdown(answers)}`, err => {
+           if(err) {
+               console.log(err)
+               return
+           }
+       })
     })
-
-
-
-function init() {
-
+.catch((err) => {
+    console.log(err)
+})
 }
+ 
+
 
 // Function call to initialize app
 init();
