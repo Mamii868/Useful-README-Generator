@@ -1,22 +1,30 @@
-# <Your-Project-Title>
-## Description
+# Readme Generator
+  
+  ## Description
+  
+  A program that generates a Readme markdown file used in Github repositories
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contact Me](#contact-me)
+  ## Installation
+  
+  open the command terminal and type ```npm install``` to install dependencies
+  
+  ## Usage
+  
+  In the terminal type ```node index.js``` to run the program and answer the questions shown
+  
+  ## License
 
-## Table of Contents
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [How to Contribute](#How-to-Contribute)
-- [Tests](#Tests)
-## Installation
+  ## Contact Me
 
-## Usage
+  Email: marcmotenii@gmail.com
+ 
+  GitHub: https://github.com/Mamii868
 
-## Credits
-
-## License
-
-## How to Contribute
-
-## Tests
