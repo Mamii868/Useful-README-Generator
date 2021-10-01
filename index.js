@@ -57,7 +57,10 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-      console.log(answers) })
+      console.log(answers) 
+        const info = answers
+        createFile(info)
+})
     
 .catch((err) => {
     console.log(err)
