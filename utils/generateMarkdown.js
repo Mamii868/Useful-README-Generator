@@ -19,7 +19,7 @@ function renderLicense(license) {
 }
 
 function generateMarkdown(answers) {
- return `${answers.title}
+ return `# ${answers.title}
   
   ## Description
   
@@ -29,10 +29,10 @@ function generateMarkdown(answers) {
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
   - [License](#license)
-  - [How to Contribute](#How-to-Contribute)
-  - [Tests](#Tests)
+  - [How to Contribute](#how-to-contribute)
+  - [Tests](#tests)
+  - [Contact Me](#contact-me)
   ## Installation
   
   ${answers.instructions}
@@ -50,6 +50,8 @@ function generateMarkdown(answers) {
   ${answers.contributions}
   
   ## Tests
+
+  ${answers.test}
 
   ## Contact Me
 
