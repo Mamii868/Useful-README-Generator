@@ -20,7 +20,7 @@ function renderLicense(answers) {
   }
 }
 
-function generateMarkdown(answers, licenseInfo) {
+function generateMarkdown(answers) {
  return `${answers.title}
   
   ## Description
@@ -45,7 +45,7 @@ function generateMarkdown(answers, licenseInfo) {
   
   ## License
 
-  ${licenseInfo}
+  ${renderLicense(answers.license)}
  
   ## How to Contribute
 
