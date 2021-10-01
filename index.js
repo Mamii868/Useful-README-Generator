@@ -2,7 +2,7 @@
 const inquirer = require("inquirer")
 const fs = require("fs");
 const Choice = require("inquirer/lib/objects/choice");
-const renderLicenseSection = require("./utils/generateMarkdown");
+const renderLicense = require("./utils/generateMarkdown");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 const questions = [
@@ -57,7 +57,8 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        const info = generateMarkdown(answers)
+        let licenceInfo = renderLicense(answers)
+        const info = generateMarkdown(answers, licenceInfo)
         createFile(info)
 })
     
@@ -67,7 +68,7 @@ function init() {
 }
  
 function createFile(info) {
-    fs.writeFileSync('./README1.md', 
+    fs.writeFileSync('./README2.md', 
     info, err => {
         if(err) {
             console.log(err)
